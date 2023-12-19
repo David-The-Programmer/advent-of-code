@@ -19,7 +19,7 @@ func main() {
 		log.Fatal(err)
 	}
 	scanner := bufio.NewScanner(file)
-	idSum := 0
+	prodSum := 0
 	for scanner.Scan() {
 		line := scanner.Text()
 		s := strings.Split(line, ":")[1]
@@ -27,6 +27,7 @@ func main() {
 			log.Fatal(err)
 		}
 		picks := strings.Split(s, ";")
+		// minimum no. coloured cubes needed = maximum no. coloured cubes picked
 		maxNumRed := 0
 		maxNumGreen := 0
 		maxNumBlue := 0
@@ -55,7 +56,7 @@ func main() {
 				}
 			}
 		}
-		idSum += maxNumRed * maxNumBlue * maxNumGreen
+		prodSum += maxNumRed * maxNumBlue * maxNumGreen
 	}
-	fmt.Println(idSum)
+	fmt.Println(prodSum)
 }
