@@ -25,9 +25,6 @@ func main() {
 		gameID++
 		line := scanner.Text()
 		s := strings.Split(line, ":")[1]
-		if err != nil {
-			log.Fatal(err)
-		}
 		picks := strings.Split(s, ";")
 		invalidPick := false
 		for _, pick := range picks {

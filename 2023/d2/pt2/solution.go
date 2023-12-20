@@ -23,9 +23,6 @@ func main() {
 	for scanner.Scan() {
 		line := scanner.Text()
 		s := strings.Split(line, ":")[1]
-		if err != nil {
-			log.Fatal(err)
-		}
 		picks := strings.Split(s, ";")
 		// minimum no. coloured cubes needed = maximum no. coloured cubes picked
 		maxNumRed := 0
