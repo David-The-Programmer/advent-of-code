@@ -73,30 +73,30 @@ func main() {
 
 func typeRank(h hand) int {
 	handRank := 0
-	handACardLabelCount := map[string]int{}
+	handCardLabelCount := map[string]int{}
 
 	for _, label := range h.cardLabels {
 		l := string(label)
-		if _, ok := handACardLabelCount[l]; !ok {
-			handACardLabelCount[l] = 1
+		if _, ok := handCardLabelCount[l]; !ok {
+			handCardLabelCount[l] = 1
 			continue
 		}
-		handACardLabelCount[l]++
+		handCardLabelCount[l]++
 	}
 
-	if len(handACardLabelCount) == 1 {
+	if len(handCardLabelCount) == 1 {
 		handRank = 7
-	} else if len(handACardLabelCount) == 2 {
-		for _, count := range handACardLabelCount {
+	} else if len(handCardLabelCount) == 2 {
+		for _, count := range handCardLabelCount {
 			if count == 4 || count == 1 {
 				handRank = 6
 			} else {
 				handRank = 5
 			}
 		}
-	} else if len(handACardLabelCount) == 3 {
+	} else if len(handCardLabelCount) == 3 {
 		maxLabelCount := math.MinInt
-		for _, count := range handACardLabelCount {
+		for _, count := range handCardLabelCount {
 			if maxLabelCount < count {
 				maxLabelCount = count
 			}
@@ -107,7 +107,7 @@ func typeRank(h hand) int {
 			handRank = 3
 		}
 
-	} else if len(handACardLabelCount) == 4 {
+	} else if len(handCardLabelCount) == 4 {
 		handRank = 2
 	} else {
 		handRank = 1
