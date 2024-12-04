@@ -15,12 +15,6 @@ public class D4P2 {
       while(scanner.hasNextLine()) {
         grid.add(Arrays.stream(scanner.nextLine().split("")).toList());
       }
-      Point[] checks = new Point[]{
-        new Point(-1, -1), // top left
-        new Point(1, 1), // bottom right
-        new Point(1, -1), // top right
-        new Point(-1, 1), // bottom left
-      };
       int numTimesXmasAppears = 0;
       for(int r = 0; r < grid.size(); r++) {
         for(int c = 0; c < grid.get(0).size(); c++) {
