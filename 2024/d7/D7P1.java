@@ -8,7 +8,6 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class D7P1 {
-
   public static void main(String[] args) {
     try {
       Scanner scanner = new Scanner(new File("./input.txt"));
